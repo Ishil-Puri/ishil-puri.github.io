@@ -8,70 +8,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<title>Ishil Puri</title>
-		<!--<link rel="stylesheet" type="text/css" href="index.css">-->
-		<style type="text/css">
-			body{
-				text-align: center;
-				min-width: 200px;
-				margin-top: 50px;
-				background-color: #151515;
-				color: #d3d3d3;
-				font-family: "Helvetica";
-			}
-			img{
-				width: 280px;
-				height: 280px;
-				border: 7px solid #d3d3d3;
-				border-radius: 5px;
-			}
-			.btn{
-				display: inline-block;
-				border-radius: 4px;
-				border: 2px solid #d3d3d3;
-				text-align: center;
-				font-size: 18px;
-				opacity: 0.75;
-				padding: 15px;
-				width: 150px;
-				transition: all 0.5s;
-				cursor: pointer;
-			}
-			.btn:hover{
-				opacity: 0.9
-			}
-			.btn span{
-				cursor: pointer;
-				display: inline-block;
-				position: relative;
-				transition: 0.5s;
-			}
-			.btn span:after{
-				content: '\00bb';
-				position: absolute;
-				opacity: 0;
-				top: 0;
-				right: -20px;
-				transition: 0.5s;
-			}
-			.btn:hover span{
-				padding-right: 25px;
-			}
-			.btn:hover span:after{
-				opacity: 1;
-				right: 0;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="custom.css">
 	</head>
 	<body>
 		<img src="pfp.png"></img>
 		<h1>Ishil Puri</h1>
-		<p>B.A. in Computer Science, UC Berkeley</p>
-		<p>Class of 2023</p>
+		<h4>B.A. in Computer Science, UC Berkeley</h4>
+		<h4>Class of 2023</h4>
+		<br>
 		<br>
 		<form action="resume.pdf" method="get" target="_blank">
 			<button class="btn" style="vertical-align: middle;">
 				<span>Resume</span>
 			</button>
+		</form>
+		<br>
+		<br>
+		<br>
+		<form action="https://github.com/Ishil-Puri">
+			<input class="in" type="image" src="git_logo.png" alt="github link" width="50" height="50">
 		</form>
 	</body>
 </html>
