@@ -1,6 +1,14 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Ishil's personal webpage">
+		<meta name="keywords" content="Ishil,Puri,Ishil Puri,UC Berkeley,Ishil berkeley,ishil,puri,ishil puri">
+		<meta name="author" content="Ishil Puri">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Ishil Puri</title>
+		<!--<link rel="stylesheet" type="text/css" href="index.css">-->
 		<style type="text/css">
 			body{
 				text-align: center;
@@ -16,10 +24,50 @@
 				border: 7px solid #d3d3d3;
 				border-radius: 5px;
 			}
+			.btn{
+				display: inline-block;
+				border-radius: 4px;
+				border: 2px solid #d3d3d3;
+				text-align: center;
+				font-size: 18px;
+				opacity: 0.75;
+				padding: 15px;
+				width: 150px;
+				transition: all 0.5s;
+				cursor: pointer;
+			}
+			.btn:hover{
+				opacity: 0.85
+			}
+			.btn span{
+				cursor: pointer;
+				display: inline-block;
+				position: relative;
+				transition: 0.5s;
+			}
+			.btn span:after{
+				content: '\00bb';
+				position: absolute;
+				opacity: 0;
+				top: 0;
+				right: -20px;
+				transition: 0.5s;
+			}
+			.btn:hover span{
+				padding-right: 25px;
+			}
+			.btn:hover span:after{
+				opacity: 1;
+				right: 0;
+			}
 		</style>
 	</head>
 	<body>
 		<img src="pfp.png"></img>
 		<h1>Ishil Puri</h1>
+		<br>
+		<button class="btn" style="vertical-align: middle;">
+			<span><link rel="stylesheet" type="text/css" href="resume.pdf" target="_blank">Resume</link></span>
+		</button>
 	</body>
 </html>
