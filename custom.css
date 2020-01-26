@@ -12,8 +12,9 @@ img{
 }
 
 .waubutton, .waubuttonimg{
-	/*visibility: hidden;
-	display: none;*/
+	visibility: hidden;
+	display: none;
+	text-align: center;
 }
 
 .in{
