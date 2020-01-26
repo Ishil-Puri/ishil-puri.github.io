@@ -11,6 +11,11 @@ img{
 	border-radius: 5px;
 }
 
+.waubutton, .waubuttonimg{
+	color:151515;
+	opacity: 0;
+}
+
 .outer{
 	overflow: hidden;
 	position: relative;
@@ -21,7 +26,7 @@ img{
 	height: 10px;
 	width: 10px;
 	right: -50px;
-	top: 50px;
+	top: -50px;
 }
 
 .in{
