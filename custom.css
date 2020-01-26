@@ -6,19 +6,9 @@ body{
 	color: #d3d3d3;
 	font-family: "Helvetica";
 }
-.pfp{
-	width: 280px;
-	height: 280px;
+img{
 	border: 7px solid #d3d3d3;
 	border-radius: 5px;
-}
-
-.hide{
-	overflow: hidden;
-	position: static;
-	height: 50px;
-	right: -100px;
-	top: -100px;
 }
 
 .in{
