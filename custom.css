@@ -12,21 +12,10 @@ img{
 }
 
 .waubutton, .waubuttonimg{
-	color:151515;
-	opacity: 0;
-}
-
-.outer{
-	overflow: hidden;
-	position: relative;
-}
-
-.inner{
-	position: absolute;
-	height: 10px;
-	width: 10px;
-	right: -50px;
-	top: -50px;
+	/*color:151515;
+	background-color: 151515;
+	opacity: 0;*/
+	display: none;
 }
 
 .in{
