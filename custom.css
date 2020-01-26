@@ -12,9 +12,7 @@ img{
 }
 
 .waubutton, .waubuttonimg{
-	/*color:151515;
-	background-color: 151515;
-	opacity: 0;*/
+	visibility: hidden;
 	display: none;
 }
 
