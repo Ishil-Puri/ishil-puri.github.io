@@ -1,7 +1,8 @@
 body{
 	font-family: "Helvetica";
 	text-align: center;
-	color: white;/* color: #6d8e9f; */
+	/*color: white;*/
+	color: #6d8e9f; 
 	background-color: #f1ddcf;
 	/* max-width: 1200px; */
 	height: 100vh;
@@ -38,15 +39,6 @@ body{
 	color: inherit;
 }
 
-@media (min-width: 501px) {
-	#about img{
-		margin-right: 30px;
-	}
-}
-
-@media (max-width: 500px) {
-	
-}
 
 #about img{
 	border-radius: 50%;
@@ -76,6 +68,18 @@ body{
 	/* width: 100%; */
 }
 
+@media (min-width: 501px) {
+	#about img{
+		margin-right: 30px;
+	}
+	.carousel-img{
+		max-width: 300px;
+	}
+}
+
+@media (max-width: 500px) {
+	
+}
 #about{
 	margin-top: 30%;
 	display: flex;
