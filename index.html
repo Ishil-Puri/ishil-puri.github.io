@@ -9,25 +9,90 @@
 
 		<title>Ishil Puri</title>
 		<link rel="stylesheet" type="text/css" href="custom.css">
+		<script>
+			var long_lived_token = "IGQVJWMk10UmIydHNYa0ttUm84WThHYXNfbm5BWVZAGeEFPQ3N6REFxYVNmR3NJRW9WS3o5LVUtRnNncXFTaTVxUWQzdkZAMbzlkSmNZARUkzYXZAWM2VzTUFMYjJtTDR0c3RYWGFRVV93";
+
+			function setURL(url) {
+				var params = new URLSearchParams(URL);
+				params.append("fields", "access_token");
+				params.set("fields", "id,media_type,media_url,timestamp");
+				params.set("access_token", long_lived_token);
+				return (url + params.toString());
+			}
+ 
+			function carouselSetup(media) {
+				var slide = document.getElementById('insta');
+				var count = 0;
+				media['data'].forEach(elem => {
+					newItem = document.createElement('a');
+					newItem.classList.add('carousel-item');
+					newItem.href = '#' + count;
+						newPic = document.createElement('img');
+						newPic.src = elem['media_url'];
+						newPic.classList.add('carousel-img');
+					newItem.appendChild(newPic);
+					slide.appendChild(newItem);
+					count++;
+				});
+			}
+
+			document.addEventListener('DOMContentLoaded', function () {
+				console.log("Page loaded.");
+				var url = setURL("https://graph.instagram.com/me/media?");
+				fetch(url)
+					.then((response) => {
+						return response.json();
+					})
+					.then((data) => {
+						console.log("request data: ",data);
+						carouselSetup(data);
+					});
+				// toggle('about');
+				// toggle('insta');
+			});
+			
+			function toggle(id) {
+				var x = document.getElementById(id);
+				if (x.style.display === "none") {
+					x.style.display = "inline-block";
+				} else {
+					x.style.display = "none";
+				}
+			}
+
+		</script>
 	</head>
 	<body>
-		<img src="pfp.png" alt="profile picture" style="width: 280px;
-	height: 280px;">
-		<h1>Ishil Puri</h1>
-		<h4>B.A. in Computer Science &nbsp;|&nbsp; UC Berkeley</h4>
-		<h4>Class of 2023</h4>
-		<br>
-		<form action="resume.pdf" target="_blank">
-			<button class="btn" style="vertical-align: middle;">
-				<span>Resume</span>
-			</button>
-		</form>
-		<br>
-		<br>
-		<form action="https://github.com/Ishil-Puri" target="_blank">
-			<input class="in" type="image" src="git_logo.png" alt="github link" width="50" height="50">
-		</form>
-		<script id="_wauh77">var _wau = _wau || []; _wau.push(["dynamic", "d3e9mi6m31", "h77", "000000000000", "small"]);</script>
-		<script async src="//waust.at/d.js"></script>
+		<div class="container">
+			<nav class="bar">
+				<a href="#about" ><h1>about me.</h1></a>
+				<a href="#insta" ><h1>my favorite food.</h1></a>
+			</nav>
+			<div class="interior">
+				<div id="about">
+						<div>
+							<img src="pfp.png" alt="profile picture">
+						</div>
+						<div>
+							<h1>Ishil Puri</h1>
+						<h4>B.A. in Computer Science &nbsp;|&nbsp; UC Berkeley</h4>
+						<h4>Class of 2023</h4>
+						<br>
+						<form action="resume.pdf" target="_blank">
+							<button class="btn" style="vertical-align: middle;">
+								<span>Resume</span>
+							</button>
+						</form>
+						<br>
+						<br>
+						<form action="https://github.com/Ishil-Puri" target="_blank">
+							<input class="git" type="image" src="git_logo.png" alt="github link" width="50" height="50">
+						</form>
+						</div>
+				</div>
+
+				<div class="carousel" id="insta"></div>
+			</div>
+		</div>
 	</body>
 </html>
