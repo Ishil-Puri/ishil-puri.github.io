@@ -4,7 +4,6 @@ body{
 	color: #6d8e9f; 
 	background-color: #f1ddcf;
 	/* max-width: 1200px; */
-	height: 100vh;
 	margin: auto;
 	scroll-behavior: smooth;
 }
@@ -13,13 +12,15 @@ body{
 .container{
 	display: flex;
 	flex-direction: column;
-	width: 100%;
-	height: 100vh;
+	flex-wrap: nowrap;
 }
 
 .bar{
-	margin-top: 25%;
-	display: inline-block;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: center;
 }
 
 
@@ -40,6 +41,10 @@ body{
 	border-radius: 50%;
 	max-width: 280px;
 	float: left;
+	padding: 6px;;
+	background-color: whitesmoke;
+	border: 2px solid #6d8e9f;
+	margin-right: 70px;
 }
 
 #about img span{
@@ -48,69 +53,75 @@ body{
 
 .carousel-img{
 	max-width: 200px;
-	margin-top: 20%;
+	margin-top: 10%;
 	padding: 6px;
 	background-color: whitesmoke;
-	margin-left: 5px;
-	margin-right: 5px;
+	margin-left: 5%;
+	margin-right: 5%;
 	border-radius: 50%;
 	border: 2px solid #6d8e9f;
 	float: none;
-	
+	transition: 0.5s;
+	backface-visibility: hidden;
+	opacity: 1;
 }
 
 .carousel-item {
 	opacity: 1.0;
 	transition: 0.75s;
+	position: relative;
 }
 
-.carousel-item:hover{
+.carousel-item:hover .carousel-img{
 	opacity: 0.3;
 	transition: 0.75s;
 }
-
-.caption {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
+.carousel-item:hover .caption-box{
+	opacity: 1;
+	transition: 0.5s;
 }
 
+.caption-box {
+	color: #353A47;
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -150%);
+	/* -ms-transform: translate(-50%, -90%); */
+	text-align: center;
+	height: 100px;
+	overflow: scroll;
+}
 
 .carousel{
 	height: 100vh;
-	/* display: flex;
-	flex-direction: row; */
-	/* width: 100%; */
 }
 
-@media (min-width: 655px) {
-	#about img{
-		margin-right: 30px;
-	}
+@media (min-width: 650px) {
 	.carousel-img {
-		max-width: 300px;
+		min-width: 300px;
+	}
+	.caption-box {
+		height: 200px;
+		transform: translate(-50%, -95%);
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 715px) {
 	#about img{
 		margin-right: 0;
 	}
 }
+
 #about{
-	margin-top: 30%;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	align-content: center;
-	scroll-snap-type: y mandatory;
 	height: 100vh;
 	margin-left: 15px;
 	margin-right: 15px;

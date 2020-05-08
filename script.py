@@ -15,7 +15,7 @@ def getID():
 
 def getMedia(): 
     URL = "https://graph.instagram.com/me/media?"
-    params = {"fields":"id,media_type,media_url,timestamp", "access_token" : long_lived_token}
+    params = {"fields":"id,caption,media_type,media_url,timestamp", "access_token" : long_lived_token}
     response = requests.get(URL, params)
     result = response.json()
     return result
