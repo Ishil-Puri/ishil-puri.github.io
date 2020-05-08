@@ -9,6 +9,7 @@
 
 		<title>Ishil Puri</title>
 		<link rel="stylesheet" type="text/css" href="custom.css">
+
 		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
 			//smooth scroll
@@ -25,18 +26,19 @@
 					}
 				});
 			});
+
 			var long_lived_token = "IGQVJWMk10UmIydHNYa0ttUm84WThHYXNfbm5BWVZAGeEFPQ3N6REFxYVNmR3NJRW9WS3o5LVUtRnNncXFTaTVxUWQzdkZAMbzlkSmNZARUkzYXZAWM2VzTUFMYjJtTDR0c3RYWGFRVV93";
 
 			function setURL(url) {
 				var params = new URLSearchParams(URL);
 				params.append("fields", "access_token");
-				params.set("fields", "id,media_type,media_url,timestamp");
+				params.set("fields", "id,media_type,media_url,timestamp,caption");
 				params.set("access_token", long_lived_token);
 				return (url + params.toString());
 			}
  
 			function carouselSetup(media) {
-				var slide = document.getElementById('insta');
+				var album = document.getElementById('insta');
 				var count = 0;
 				media['data'].forEach(elem => {
 					newItem = document.createElement('a');
@@ -45,8 +47,13 @@
 						newPic = document.createElement('img');
 						newPic.src = elem['media_url'];
 						newPic.classList.add('carousel-img');
+						
+						newCap = document.createElement('div');
+						newCap.innerHTML = elem['caption'];
+						newCap.classList.add('caption-box');
 					newItem.appendChild(newPic);
-					slide.appendChild(newItem);
+					newItem.appendChild(newCap);
+					album.appendChild(newItem);
 					count++;
 				});
 			}
@@ -74,7 +81,6 @@
 					x.style.display = "none";
 				}
 			}
-
 		</script>
 	</head>
 	<body>
