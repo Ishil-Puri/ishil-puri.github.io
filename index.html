@@ -9,7 +9,22 @@
 
 		<title>Ishil Puri</title>
 		<link rel="stylesheet" type="text/css" href="custom.css">
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
+			//smooth scroll
+			$(document).ready(function () {
+				$("a").on('click', function (event) {
+					if (this.hash !== "") {
+						event.preventDefault();
+						var hash = this.hash;
+						$('html, body').animate({
+							scrollTop: $(hash).offset().top
+						}, 700, function () {
+							window.location.hash = hash;
+						});
+					}
+				});
+			});
 			var long_lived_token = "IGQVJWMk10UmIydHNYa0ttUm84WThHYXNfbm5BWVZAGeEFPQ3N6REFxYVNmR3NJRW9WS3o5LVUtRnNncXFTaTVxUWQzdkZAMbzlkSmNZARUkzYXZAWM2VzTUFMYjJtTDR0c3RYWGFRVV93";
 
 			function setURL(url) {
@@ -50,7 +65,7 @@
 				// toggle('about');
 				// toggle('insta');
 			});
-			
+
 			function toggle(id) {
 				var x = document.getElementById(id);
 				if (x.style.display === "none") {
@@ -91,7 +106,9 @@
 						</div>
 				</div>
 
+				
 				<div class="carousel" id="insta"></div>
+
 			</div>
 		</div>
 	</body>
