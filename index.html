@@ -1,6 +1,14 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-178415079-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+
+			gtag('config', 'UA-178415079-1');
+		</script>
 		<meta charset="utf-8">
 		<meta name="description" content="Ishil's personal webpage">
 		<meta name="keywords" content="Ishil,Puri,Ishil Puri,UC Berkeley,Ishil berkeley,ishil,puri,ishil puri">
@@ -32,7 +40,7 @@
 			function setURL(url) {
 				var params = new URLSearchParams(URL);
 				params.append("fields", "access_token");
-				params.set("fields", "id,media_type,media_url,timestamp,caption");
+				params.set("fields", "id,media_type,media_url,timestamp,caption,permalink");
 				params.set("access_token", long_lived_token);
 				return (url + params.toString());
 			}
@@ -43,7 +51,8 @@
 				media['data'].forEach(elem => {
 					newItem = document.createElement('a');
 					newItem.classList.add('carousel-item');
-					newItem.href = '#' + count;
+					newItem.target = "_blank";
+					newItem.href = elem['permalink'];
 						newPic = document.createElement('img');
 						newPic.src = elem['media_url'];
 						newPic.classList.add('carousel-img');
@@ -66,7 +75,7 @@
 						return response.json();
 					})
 					.then((data) => {
-						console.log("request data: ",data);
+						console.log("request data: ", data);
 						carouselSetup(data);
 					});
 				// toggle('about');
@@ -87,7 +96,7 @@
 		<div class="container">
 			<nav class="bar">
 				<a href="#about" ><h1>about me.</h1></a>
-				<a href="#insta" ><h1>food.</h1></a>
+				<a href="#insta" ><h1>food portfolio.</h1></a>
 			</nav>
 			<div class="interior">
 				<div id="about">
