@@ -1,5 +1,13 @@
 // script.js
 
+function typeNextChar(element, text, index = 0, delay = 30) {
+  if (index < text.length) {
+    element.textContent += text[index];
+    index++;
+    setTimeout(() => typeNextChar(element, text, index, delay), delay);
+  }
+}
+
 function toggleDarkMode() {
   const body = document.body;
   body.classList.toggle('dark-mode');
@@ -27,31 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const loadingScreen = document.querySelector('.loading-screen');
   loadingScreen.classList.add('loaded');
 
-  const typingText = [
-    "curious, pastry loving, cycling enthusiast — computer science + public policy @ uc berkeley.",
-    "\nso many interesting topics to learn.",
-    "\nalways looking for a good problem to solve."
-  ];
+  // work in progress badge
 
-  let typingIndex = 0;
-  let typingCharIndex = 0;
-  let typingTimeout;
+  const wipBadge = document.getElementById("wip");
 
-  function typeNextChar() {
-    const typingElement = document.getElementById("typing-effect");
-    if (typingIndex < typingText.length) {
-      if (typingCharIndex < typingText[typingIndex].length) {
-        typingElement.textContent += typingText[typingIndex][typingCharIndex];
-        typingCharIndex++;
-        typingTimeout = setTimeout(typeNextChar, 30);
-      } else {
-        typingElement.innerHTML += "<br>"; 
-        typingIndex++;
-        typingCharIndex = 0;
-        typingTimeout = setTimeout(typeNextChar, 900);
-      }
-    }
-  }
+    wipBadge.addEventListener("click", function() {
+      const originalText = wipBadge.textContent;
+      wipBadge.textContent = "";
+      typeNextChar(wipBadge, "work in progress", 0, 30);
 
-  typeNextChar();
+      setTimeout(() => {
+        wipBadge.textContent = originalText;
+      }, 3000);
+  });
 });
