@@ -1,0 +1,51 @@
+.cta-button{
+  display: inline-block;
+  background-color: #000;
+  color: #ffffff; /* White text color */
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 350;
+}
+
+.social-button {
+  display: inline-block;
+  background-color: var(--button-background); /* Light grey color for the buttons */
+  color: #000; /* Black text color */
+  padding: 5px; /* Increase the padding to create circular buttons */
+  text-decoration: none;
+  border-radius: 50%; /* Use 50% border-radius to create circles */
+  width: 30px; /* Set a fixed width and height to create small circles */
+  height: 30px;
+  text-align: center;
+  font-size: 0; /* Remove font-size to hide any text inside the buttons */
+  margin: 0 5px;
+}
+
+.cta-button,
+.social-button {
+  transition: background-color 0.2s ease-in-out;
+}
+
+
+/* Reset the SVG icon size to fit inside the circular buttons */
+.icon {
+  width: 30px;
+  height: 30px;
+  fill: var(--icon-color); /* Set the SVG icon color to current theme color (light/dark) */
+}
+
+.cta-button:hover {
+  background-color: #ababab; /* Darker grey color on hover */
+}
+
+.social-button:hover {
+  background-color: #d4d4d4; /* Darker grey color on hover */
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
