@@ -35,14 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const loadingScreen = document.querySelector('.loading-screen');
   loadingScreen.classList.add('loaded');
 
-  const mobileMenuButton = document.getElementById('mobileMenuButton');
-  const navLinks = document.getElementById('navLinks');
-
-  mobileMenuButton.addEventListener('click', function () {
-    navLinks.classList.toggle('show-nav-links');
-  });
-
-
   // work in progress badge
   const wipBadge = document.getElementById("wip");
 
