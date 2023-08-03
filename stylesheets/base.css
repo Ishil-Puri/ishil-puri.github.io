@@ -5,6 +5,8 @@
   --button-text: #222222;
   --icon-color: #000;
   --caption-color: #666;
+  --badge-color: rgba(0, 0, 0, 0.1);
+  --badge-hover-color: rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -33,6 +35,8 @@ body.disable-fill-transition {
   --button-text: #fff;
   --icon-color: #fff;
   --caption-color: #fff;
+  --badge-color: #f0f0f0;
+  --badge-hover-color: #d0d0d0;
 }
 
 body.dark-mode {
