@@ -1,0 +1,100 @@
+/* Style for the vertical navigation bar */
+.vertical-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--background-color);
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 40px;
+  padding-left: 40px;
+}
+
+.nav-item {
+  font-size: 16px;
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 10px 20px;
+}
+
+.nav-logo {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Active navigation item style */
+.nav-item.active {
+  font-weight: 600;
+}
+
+#nav-social {
+  margin-left: 10px;
+}
+
+/* Main content area */
+.main-content {
+  margin-left: 220px; /* Adjust based on the width of the vertical nav bar */
+  padding: 40px;
+  width: 950px;
+}
+
+/* Section header style */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Article grid styles */
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.item-box {
+  position: relative;
+  background-color: var(--button-background);
+  overflow: hidden;
+  height: 260px;
+}
+
+.item-image {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.item-details {
+  color: #000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.item-box:hover .item-details {
+  opacity: 1;
+}
+
+.item-year {
+  font-size: 12px;
+}
+
+.item-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.item-byline {
+  font-size: 14px;
+}

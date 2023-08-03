@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Policy Memo - Ishil Puri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/base.css">
+  <link rel="stylesheet" href="../stylesheets/page-base.css">
+  <link rel="stylesheet" href="../stylesheets/component-socials.css">
+  <link rel="stylesheet" href="../stylesheets/page-articles.css">
+  <script src="../script.js"></script>
+</head>
+<body>
+  <!-- Add the loading screen -->
+  <div class="loading-screen"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="vertical-nav">
+    <a href="../index.html" class="nav-item nav-logo">ishil puri</a>
+    <a href="../index.html" class="nav-item">home</a>
+    <a href="../writing.html" class="nav-item active">writing</a>
+    <a href="../photography.html" class="nav-item">photography</a>
+    <a href="../projects.html" class="nav-item">projects</a>
+    <a href="../resume.pdf" target="_blank" class="nav-item">resume</a>
+    <div class="social-media" id="nav-social">
+      <a href="https://www.linkedin.com/in/ishilp/" class="social-button" target="_blank">
+        <svg viewBox="0 0 30 24" class="icon">
+          <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+            c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+            C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"></path>
+        </svg></a>
+      <a href="mailto:ishil@berkeley.edu" class="social-button" target="_blank">
+        <svg width="24" height="24" viewBox="-600 -500 3000 3000" class="icon">
+           <path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/>
+        </svg></a>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <div class="main-content">
+    <header class="section-header">
+      <h1>Public Hospitals in Chile</h1>
+      <p>a shift to meritocracy and its effects on mortality</p>
+    </header>
+
+    <!-- <button class="bionic-reading-toggle" id="bionicReadingToggle">Toggle Bionic Reading</button> -->
+
+    <!-- Article Content -->
+    <article class="article">
+      <div class="article-image" style="background-image: url('../images/chile-hospital.jpeg');"></div>
+      <p class="article-caption">Felix Bulnes hospital in Santiago de Chile.</p>
+      
+      <div class="article-text" id="originalArticle">
+        <p>In 2003, Chile implemented a policy reform known as the Law of Public High Management. The reform aimed to improve the public sector's efficiency and effectiveness by addressing two main issues. First, it sought to enhance the recruitment process for senior executive positions within public organizations. Prior to the reform, the selection process was opaque and discretionary. The new policy replaced this system with a public, competitive, and transparent selection process that emphasized meritocracy and fairness, ensuring that only the most qualified candidates would be appointed to key leadership roles. Second, the reform addressed the compensation gap between public sector senior executives and their counterparts in the private sector. By introducing performance-based pay incentives and increasing base wages, the policy aimed to attract and retain top talent in the public sector. This measure was crucial in fostering a more competitive and motivated workforce, which contributes to better performance.</p>
+
+        <p>This study measures the impact of public sector CEOs on hospital performance by using hospital mortality rates as the key measure of outcome-based success. The paper leverages a staggered differences-in-differences design (a.k.a. event-study) to estimate causal effects on hospital performance. This means that the comparison of hospital results was based on the time since the reform was adopted. Results show that the reform decreased death rates by approximately 8% in public hospitals in the 3 years following adoption of the new system. Further, operating room efficiency increased as usage rates went up by 25% under new management. Further, there is a significant reduction in doctor turnover while wages remain stable.</p>
+
+        <p>The data presented in the study is strong for several reasons. First, by covering the various facets of hospital performance—operating room efficiency, executive background, and doctor turnover—the study provides a comprehensive assessment of the policy's effects. Second, by analyzing the quarters since the reform adoption, the study tracks the impact over time and accommodates the staggered adoption. This approach allows for a better understanding of the long-term effects of the policy and reduces the likelihood that the observed changes are due to random fluctuations with time.</p>
+
+        <p>Third, the study compares hospitals that adopted the reform with those that did not, ensuring that hospital outcomes, patient characteristics, and political variables do not differ significantly between the two groups. This approach helps to isolate the effects of the reform and strengthens the causal inference. Fourth, the analysis shows that there were no pre-existing trends in the data or an Ashenfelter dip, suggesting that the observed changes at the threshold can be attributed to the reform rather than other factors.</p>
+
+        <p>Lastly, the study demonstrates that patient composition did not change, and there was no significant self-selection that created an improvement in performance. This strengthens the case for the reform's impact on hospital performance. Furthermore, the authors stress that the Chilean healthcare system's automatic assignment feature, which means patients cannot choose their hospital providers, reduces the chance of confounding factors influencing the results and supports the validity of the study's findings. Overall, these factors contribute to the robustness of the data and the conclusions drawn from it.</p>
+
+        <p>One consideration would be to include more measures of success in addition to mortality rate. This could include patient satisfaction, readmission rates, as well as impacts on preventative care. Focusing solely on the CEO may also be a limiting factor in determining the key factors that lead to improved performance. Thus, the study may overlook certain decisions that lead to better outcomes which may not be direct decisions made by the CEO. Overall, the policy seems to be effective and the study’s analysis of the policy is robust.</p>
+
+        <p style="text-align: center;">—<br />Ishil Puri</p>
+
+        <!-- Add more paragraphs as needed -->
+      </div>
+
+      <!-- <div class="article-text" id="bionicArticle" style="display: none;">
+        <p class="p1"><span class="s1"><b>I</b>n <b>200</b>3, <b>Chi</b>le <b>implement</b>ed a <b>poli</b>cy <b>refo</b>rm <b>kno</b>wn <b>a</b>s <b>th</b>e <b>La</b>w <b>o</b>f <b>Publ</b>ic <b>Hig</b>h <b>Manageme</b>nt. <b>Th</b>e <b>refo</b>rm <b>aim</b>ed <b>t</b>o <b>impro</b>ve <b>th</b>e <b>publ</b>ic <b>sect</b>or<b>'</b>s <b>efficien</b>cy <b>an</b>d <b>effectiven</b>ess <b>b</b>y <b>addressi</b>ng <b>tw</b>o <b>mai</b>n <b>issu</b>es. <b>Fir</b>st, <b>i</b>t <b>soug</b>ht <b>t</b>o <b>enhan</b>ce <b>th</b>e <b>recruitme</b>nt <b>proce</b>ss <b>fo</b>r <b>seni</b>or <b>executi</b>ve <b>positio</b>ns <b>with</b>in <b>publ</b>ic <b>organizati</b>ons. <b>Pri</b>or <b>t</b>o <b>th</b>e <b>refo</b>rm, <b>th</b>e <b>selecti</b>on <b>proce</b>ss <b>wa</b>s <b>opaq</b>ue <b>an</b>d <b>discretion</b>ary. <b>Th</b>e <b>ne</b>w <b>poli</b>cy <b>replac</b>ed <b>thi</b>s <b>syst</b>em <b>wit</b>h a <b>publ</b>ic, <b>competiti</b>ve, <b>an</b>d <b>transpare</b>nt <b>selecti</b>on <b>proce</b>ss <b>tha</b>t <b>emphasiz</b>ed <b>meritocra</b>cy <b>an</b>d <b>fairne</b>ss, <b>ensuri</b>ng <b>tha</b>t <b>onl</b>y <b>th</b>e <b>mos</b>t <b>qualifi</b>ed <b>candidat</b>es <b>wou</b>ld <b>b</b>e <b>appoint</b>ed <b>t</b>o <b>ke</b>y <b>leadersh</b>ip <b>rol</b>es. <b>Seco</b>nd, <b>th</b>e <b>refo</b>rm <b>address</b>ed <b>th</b>e <b>compensati</b>on <b>ga</b>p <b>betwe</b>en <b>publ</b>ic <b>sect</b>or <b>seni</b>or <b>executiv</b>es <b>an</b>d <b>the</b>ir <b>counterpar</b>ts <b>i</b>n <b>th</b>e <b>priva</b>te <b>sect</b>or. <b>B</b>y <b>introduci</b>ng <b>performan</b>ce-<b>bas</b>ed <b>pa</b>y <b>incentiv</b>es <b>an</b>d <b>increasi</b>ng <b>bas</b>e <b>wag</b>es, <b>th</b>e <b>poli</b>cy <b>aim</b>ed <b>t</b>o <b>attra</b>ct <b>an</b>d <b>reta</b>in <b>to</b>p <b>tale</b>nt <b>i</b>n <b>th</b>e <b>publ</b>ic <b>sect</b>or. <b>Thi</b>s <b>measu</b>re <b>wa</b>s <b>cruci</b>al <b>i</b>n <b>fosteri</b>ng a <b>mor</b>e <b>competiti</b>ve <b>an</b>d <b>motivat</b>ed <b>workfor</b>ce, <b>whi</b>ch <b>contribut</b>es <b>t</b>o <b>bett</b>er <b>performan</b>ce.</span></p>
+        <p class="p1"><span class="s1"><b>Thi</b>s <b>stu</b>dy <b>measur</b>es <b>th</b>e <b>impa</b>ct <b>o</b>f <b>publ</b>ic <b>sect</b>or <b>CEO</b>s <b>o</b>n <b>hospit</b>al <b>performan</b>ce <b>b</b>y <b>usi</b>ng <b>hospit</b>al <b>mortali</b>ty <b>rat</b>es <b>a</b>s <b>th</b>e <b>ke</b>y <b>measu</b>re <b>o</b>f <b>outco</b>me-<b>bas</b>ed <b>succe</b>ss. <b>Th</b>e <b>pap</b>er <b>leverag</b>es a <b>stagger</b>ed <b>differenc</b>es-<b>i</b>n-<b>differenc</b>es <b>desi</b>gn (<b>a.k</b>.a. <b>eve</b>nt-<b>stu</b>dy) <b>t</b>o <b>estima</b>te <b>caus</b>al <b>effec</b>ts <b>o</b>n <b>hospit</b>al <b>performan</b>ce. <b>Thi</b>s <b>mea</b>ns <b>tha</b>t <b>th</b>e <b>comparis</b>on <b>o</b>f <b>hospit</b>al <b>resul</b>ts <b>wa</b>s <b>bas</b>ed <b>o</b>n <b>th</b>e <b>tim</b>e <b>sin</b>ce <b>th</b>e <b>refo</b>rm <b>wa</b>s <b>adopt</b>ed. <b>Resul</b>ts <b>sho</b>w <b>tha</b>t <b>th</b>e <b>refo</b>rm <b>decreas</b>ed <b>dea</b>th <b>rat</b>es <b>b</b>y <b>approximat</b>ely 8% <b>i</b>n <b>publ</b>ic <b>hospita</b>ls <b>i</b>n <b>th</b>e 3 <b>yea</b>rs <b>followi</b>ng <b>adopti</b>on <b>o</b>f <b>th</b>e <b>ne</b>w <b>syst</b>em. <b>Furth</b>er, <b>operati</b>ng <b>roo</b>m <b>efficien</b>cy <b>increas</b>ed <b>a</b>s <b>usa</b>ge <b>rat</b>es <b>wen</b>t <b>u</b>p <b>b</b>y <b>2</b>5% <b>und</b>er <b>ne</b>w <b>manageme</b>nt. <b>Furth</b>er, <b>the</b>re <b>i</b>s a <b>significa</b>nt <b>reducti</b>on <b>i</b>n <b>doct</b>or <b>turnov</b>er <b>whi</b>le <b>wag</b>es <b>rema</b>in <b>stab</b>le. </span></p>
+        <p class="p1"><span class="s1"><b>Th</b>e <b>dat</b>a <b>present</b>ed <b>i</b>n <b>th</b>e <b>stu</b>dy <b>i</b>s <b>stro</b>ng <b>fo</b>r <b>sever</b>al <b>reaso</b>ns. <b>Fir</b>st, <b>b</b>y <b>coveri</b>ng <b>th</b>e <b>vario</b>us <b>face</b>ts <b>o</b>f <b>hospit</b>al <b>performan</b>ce—<b>operati</b>ng <b>roo</b>m <b>efficien</b>cy, <b>executi</b>ve <b>backgrou</b>nd, <b>an</b>d <b>doct</b>or <b>turnov</b>er—<b>th</b>e <b>stu</b>dy <b>provid</b>es a <b>comprehens</b>ive <b>assessme</b>nt <b>o</b>f <b>th</b>e <b>poli</b>cy<b>'</b>s <b>effec</b>ts. <b>Seco</b>nd, <b>b</b>y <b>analyzi</b>ng <b>th</b>e <b>quarte</b>rs <b>sin</b>ce <b>th</b>e <b>refo</b>rm <b>adopti</b>on, <b>th</b>e <b>stu</b>dy <b>trac</b>ks <b>th</b>e <b>impa</b>ct <b>ove</b>r <b>tim</b>e <b>an</b>d <b>accommodat</b>es <b>th</b>e <b>stagger</b>ed <b>adopti</b>on. <b>Thi</b>s <b>approa</b>ch <b>allo</b>ws <b>fo</b>r a <b>bett</b>er <b>understand</b>ing <b>o</b>f <b>th</b>e <b>lon</b>g-<b>ter</b>m <b>effec</b>ts <b>o</b>f <b>th</b>e <b>poli</b>cy <b>an</b>d <b>reduc</b>es <b>th</b>e <b>likeliho</b>od <b>tha</b>t <b>th</b>e <b>observ</b>ed <b>chang</b>es <b>ar</b>e <b>du</b>e <b>t</b>o <b>rand</b>om <b>fluctuatio</b>ns <b>wit</b>h <b>tim</b>e.</span></p>
+        <p class="p1"><span class="s1"><b>Thi</b>rd, <b>th</b>e <b>stu</b>dy <b>compar</b>es <b>hospita</b>ls <b>tha</b>t <b>adopt</b>ed <b>th</b>e <b>refo</b>rm <b>wit</b>h <b>tho</b>se <b>tha</b>t <b>di</b>d <b>no</b>t, <b>ensuri</b>ng <b>tha</b>t <b>hospit</b>al <b>outcom</b>es, <b>patie</b>nt <b>characterist</b>ics, <b>an</b>d <b>politic</b>al <b>variabl</b>es <b>d</b>o <b>no</b>t <b>diff</b>er <b>significan</b>tly <b>betwe</b>en <b>th</b>e <b>tw</b>o <b>grou</b>ps. <b>Thi</b>s <b>approa</b>ch <b>hel</b>ps <b>t</b>o <b>isola</b>te <b>th</b>e <b>effec</b>ts <b>o</b>f <b>th</b>e <b>refo</b>rm <b>an</b>d <b>strengthe</b>ns <b>th</b>e <b>caus</b>al <b>inferen</b>ce. <b>Four</b>th, <b>th</b>e <b>analys</b>is <b>sho</b>ws <b>tha</b>t <b>the</b>re <b>wer</b>e <b>n</b>o <b>pr</b>e-<b>existi</b>ng <b>tren</b>ds <b>i</b>n <b>th</b>e <b>dat</b>a <b>o</b>r <b>a</b>n <b>Ashenfelt</b>er <b>di</b>p, <b>suggesti</b>ng <b>tha</b>t <b>th</b>e <b>observ</b>ed <b>chang</b>es <b>a</b>t <b>th</b>e <b>thresho</b>ld <b>ca</b>n <b>b</b>e <b>attribut</b>ed <b>t</b>o <b>th</b>e <b>refo</b>rm <b>rath</b>er <b>tha</b>n <b>oth</b>er <b>facto</b>rs.</span></p>
+        <p class="p1"><span class="s1"><b>Last</b>ly, <b>th</b>e <b>stu</b>dy <b>demonstrat</b>es <b>tha</b>t <b>patie</b>nt <b>compositi</b>on <b>di</b>d <b>no</b>t <b>chan</b>ge, <b>an</b>d <b>the</b>re <b>wa</b>s <b>n</b>o <b>significa</b>nt <b>sel</b>f-<b>selecti</b>on <b>tha</b>t <b>creat</b>ed <b>a</b>n <b>improveme</b>nt <b>i</b>n <b>performan</b>ce. <b>Thi</b>s <b>strengthe</b>ns <b>th</b>e <b>cas</b>e <b>fo</b>r <b>th</b>e <b>refo</b>rm<b>'</b>s <b>impa</b>ct <b>o</b>n <b>hospit</b>al <b>performan</b>ce. <b>Furthermo</b>re, <b>th</b>e <b>autho</b>rs <b>stre</b>ss <b>tha</b>t <b>th</b>e <b>Chile</b>an <b>healthca</b>re <b>syst</b>em<b>'</b>s <b>automat</b>ic <b>assignme</b>nt <b>featu</b>re, <b>whi</b>ch <b>mea</b>ns <b>patien</b>ts <b>ca</b>n<b>no</b>t <b>choo</b>se <b>the</b>ir <b>hospit</b>al <b>provide</b>rs, <b>reduc</b>es <b>th</b>e <b>chan</b>ce <b>o</b>f <b>confoundi</b>ng <b>facto</b>rs <b>influenci</b>ng <b>th</b>e <b>resul</b>ts <b>an</b>d <b>suppor</b>ts <b>th</b>e <b>validi</b>ty <b>o</b>f <b>th</b>e <b>stu</b>dy<b>'</b>s <b>findin</b>gs. <b>Overa</b>ll, <b>the</b>se <b>facto</b>rs <b>contribu</b>te <b>t</b>o <b>th</b>e <b>robustne</b>ss <b>o</b>f <b>th</b>e <b>dat</b>a <b>an</b>d <b>th</b>e <b>conclusio</b>ns <b>dra</b>wn <b>fro</b>m <b>i</b>t.</span></p>
+        <p class="p1"><span class="s1"><b>On</b>e <b>considerat</b>ion <b>wou</b>ld <b>b</b>e <b>t</b>o <b>inclu</b>de <b>mor</b>e <b>measur</b>es <b>o</b>f <b>succe</b>ss <b>i</b>n <b>additi</b>on <b>t</b>o <b>mortali</b>ty <b>rat</b>e. <b>Thi</b>s <b>cou</b>ld <b>inclu</b>de <b>patie</b>nt <b>satisfacti</b>on, <b>readmissi</b>on <b>rat</b>es, <b>a</b>s <b>wel</b>l <b>a</b>s <b>impac</b>ts <b>o</b>n <b>preventati</b>ve <b>car</b>e. <b>Focusi</b>ng <b>sole</b>ly <b>o</b>n <b>th</b>e <b>CE</b>O <b>ma</b>y <b>als</b>o <b>b</b>e a <b>limiti</b>ng <b>fact</b>or <b>i</b>n <b>determini</b>ng <b>th</b>e <b>ke</b>y <b>facto</b>rs <b>tha</b>t <b>lea</b>d <b>t</b>o <b>improv</b>ed <b>performan</b>ce. <b>Thu</b>s, <b>th</b>e <b>stu</b>dy <b>ma</b>y <b>overlo</b>ok <b>certa</b>in <b>decisio</b>ns <b>tha</b>t <b>lea</b>d <b>t</b>o <b>bett</b>er <b>outcom</b>es <b>whi</b>ch <b>ma</b>y <b>no</b>t <b>b</b>e <b>dire</b>ct <b>decisio</b>ns <b>mad</b>e <b>b</b>y <b>th</b>e <b>CE</b>O. <b>Overa</b>ll, <b>th</b>e <b>poli</b>cy <b>see</b>ms <b>t</b>o <b>b</b>e <b>effecti</b>ve <b>an</b>d <b>th</b>e <b>stu</b>dy<b>’</b>s <b>analys</b>is <b>o</b>f <b>th</b>e <b>poli</b>cy <b>i</b>s <b>robu</b>st.</span></p>
+      </div> -->
+
+    </article>
+  </div>
+
+    <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+      <svg viewBox="0 0 24 24" class="dark-mode-icon">
+        <path d="M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12ZM12 0C5.37 0 0 5.37 0 12C0 18.63 5.37 24 12 24C18.63 24 24 18.63 24 12C24 5.37 18.63 0 12 0Z" />
+        <path d="M12 5C10.35 5 9 6.35 9 8C9 9.65 10.35 11 12 11C13.65 11 15 9.65 15 8C15 6.35 13.65 5 12 5Z" />
+      </svg>
+    </button>
+  </body>
+</html>
