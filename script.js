@@ -16,7 +16,7 @@ function typeNextChar(element, textArray, index = 0, charIndex = 0, delay = 30, 
   }
 }
 
-function toggleDarkMode() {
+function toggleDarkMode(fromBtn=true) {
   const body = document.body;
   body.classList.toggle('dark-mode');
   const darkModeToggle = document.querySelector('.dark-mode-toggle');
@@ -25,6 +25,11 @@ function toggleDarkMode() {
   // Store the dark mode preference in localStorage
   const isDarkModeEnabled = body.classList.contains('dark-mode');
   localStorage.setItem('darkMode', isDarkModeEnabled);
+  if(fromBtn) {
+    localStorage.setItem('userColorPref', true);
+  } else{
+    localStorage.setItem('userColorPref', false);
+  }
 }
 
 // Apply dark mode preference on page load
@@ -37,11 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to detect and toggle dark mode based on OS preference
 function toggleDarkModeBasedOnOS() {
-  const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const osDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const isDarkModeEnabled = localStorage.getItem('darkMode') === 'true';
-  ;
-  if (prefersDarkMode !== isDarkModeEnabled) {
-    toggleDarkMode();
+  const hasLocalColorPref = localStorage.getItem('userColorPrefDark');
+  
+  if (osDarkMode !== isDarkModeEnabled && !hasLocalColorPref) {
+    toggleDarkMode(fromBtn=false);
   }
 }
 
