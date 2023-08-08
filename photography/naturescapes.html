@@ -10,9 +10,13 @@
   <link rel="stylesheet" href="../stylesheets/component-socials.css">
   <link rel="stylesheet" href="../stylesheets/photo-gallery.css"> 
   <link rel="stylesheet" href="../stylesheets/wip.css">
+  <link rel="stylesheet" href="../stylesheets/modal.css">
   <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+  
   <script src="../script.js"></script>
   <script src="../wip-typing-effect.js"></script>
+  <script src="../scripts/modal.js"></script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-38DM4F0S3L"></script>
   <script>
@@ -64,35 +68,40 @@
   <div class="main-content">
     <header class="section-header">
       <h1>naturescapes</h1>
-      <!-- <p>...</p> -->
+      <!-- <p>2023</p> -->
       <span class="wip-badge" id="wip">WIP</span>
     </header>
     
     
     <!-- Photo Gallery -->
     <div class="photo-gallery">
-      <div class="photo-card">
+      <div class="photo-card" onclick="openModal('../images/nature/nature-hut.jpeg')">
         <div class="photo-image" style="background-image: url('../images/nature/nature-hut.jpeg');"></div>
       </div>
-
-      <div class="photo-card">
+      
+      <div class="photo-card" onclick="openModal('../images/nature/nature-tree.jpeg')">
         <div class="photo-image" style="background-image: url('../images/nature/nature-tree.jpeg');"></div>
       </div>
-
-      <div class="photo-card">
+      
+      <div class="photo-card" onclick="openModal('../images/nature/nature-landscape.jpeg')">
         <div class="photo-image" style="background-image: url('../images/nature/nature-landscape.jpeg');"></div>
       </div>
-
-      <div class="photo-card">
+      
+      <div class="photo-card" onclick="openModal('../images/nature/nature-mp.jpeg')">
         <div class="photo-image" style="background-image: url('../images/nature/nature-mp.jpeg');"></div>
       </div>
-
-      <div class="photo-card">
+      
+      <div class="photo-card" onclick="openModal('../images/nature/nature-landscape2.jpeg')">
         <div class="photo-image" style="background-image: url('../images/nature/nature-landscape2.jpeg');"></div>
-      </div>
+      </div>      
       
 
       <!-- Repeat similar structure for more photo cards -->
+
+      <div class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" src="" alt="Modal Image">
+      </div>
 
     </div>
 

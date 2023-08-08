@@ -12,7 +12,7 @@
   <link rel="icon" type="image/x-icon" href="images/favicon.png">
 
   <script src="script.js"></script>
-  <script src="filter-articles.js"></script>
+  <script src="scripts/filter-articles.js"></script>
   
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-38DM4F0S3L"></script>
@@ -65,8 +65,8 @@
   <div class="main-content">
     <header class="section-header">
       <h1>writing portfolio</h1>
-      <p>a collection of my memos & papers on various topics of public policy and economics that intrigue me</p>
-      <span class="wip-badge" id="latam-badge" onclick="filterArticles('latam');">latam</span>
+      <p style="padding-bottom: 0;">a collection of my memos & papers on various topics of public policy and economics that intrigue me</p>
+      <span style="font-size: smaller;">filter: <span class="wip-badge" id="latam-badge" onclick="filterArticles('all');">all</span> <span class="wip-badge" id="latam-badge" onclick="filterArticles('latam');">latam</span></span>
       <span class="wip-badge" id="corp-gov-badge" onclick="filterArticles('corp-gov');">corporate governance</span>
     </header>
     
