@@ -14,10 +14,12 @@ body {
 
 .article-image {
   width: 100%;
-  height: 350px; /* Adjust the height as needed */
+  height: auto;
   background-size: cover;
   background-position: center;
   margin-bottom: 10px;
+  display: block;
+
 }
 
 .article-caption {

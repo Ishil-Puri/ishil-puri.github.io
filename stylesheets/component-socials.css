@@ -37,7 +37,9 @@
 }
 
 .cta-button:hover {
-  background-color: #ababab; /* Darker grey color on hover */
+  /* background-color: #ababab; Darker grey color on hover */
+  background-color: darken(var(--button-background), 10%);
+  color: lighten(var(--button-text), 10%);
 }
 
 .social-button:hover {
@@ -48,4 +50,18 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: calc(50% + 110px);
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  opacity: 0;
+  font-size: 14px;
+  transition: opacity 0.3s;
 }

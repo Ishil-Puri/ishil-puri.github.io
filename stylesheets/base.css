@@ -7,6 +7,7 @@
   --caption-color: #666;
   --badge-color: rgba(0, 0, 0, 0.1);
   --badge-hover-color: rgba(0, 0, 0, 0.2);
+  --overlay-color: rgb(245, 245, 245);
 }
 
 body {
@@ -20,7 +21,7 @@ body {
   align-items: center;
   height: 100vh;
   transition: background-color 0.3s ease-in-out;
-  min-width: 1000px;
+  /* min-width: 1000px; */
 }
 
 body.disable-fill-transition {
@@ -29,7 +30,7 @@ body.disable-fill-transition {
 
 /*BEGIN––DARKMODE––BEGIN*/
 .dark-mode {
-  --background-color: #121212;
+  --background-color: rgba(39,39,40);
   --text-color: #ffffff;
   --button-background: rgb(37, 40, 42);
   --button-text: #fff;
@@ -37,6 +38,7 @@ body.disable-fill-transition {
   --caption-color: #fff;
   --badge-color: #f0f0f0;
   --badge-hover-color: #d0d0d0;
+  --overlay-color: rgba(45, 48, 51);
 }
 
 body.dark-mode {
@@ -45,29 +47,33 @@ body.dark-mode {
 }
 
 .dark-mode-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      z-index: 9999;
-    }
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--overlay-color); 
+  backdrop-filter: blur(30px);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+}
 
-    .dark-mode-toggle:focus {
-      outline: none;
-    }
+.dark-mode-toggle:focus {
+  outline: none;
+}
 
-    .dark-mode-icon {
-      width: 24px;
-      height: 24px;
-      fill: var(--icon-color);
-      transition: fill 0.4s ease-in-out;
-    }
+.dark-mode-icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--icon-color);
+  transition: fill 0.4s ease-in-out;
+}
 
-    .dark-mode-toggle.dark {
-      transform: rotate(180deg);
-    }
+.dark-mode-toggle.dark {
+  transform: rotate(180deg);
+}
 
 .loading-screen {
   position: fixed;
@@ -90,9 +96,10 @@ body.dark-mode {
 /*END––DARKMODE––END*/
 
 .container {
-  max-width: 960px;
+  max-width: 100%;
   padding: 40px;
   text-align: center;
+  /* margin: 0 auto; Center container horizontally */
 }
 
 header {
@@ -110,4 +117,13 @@ p {
   font-weight: 300;
   line-height: 1.6;
   margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 14px;
+  }
 }

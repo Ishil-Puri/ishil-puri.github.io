@@ -1,21 +1,22 @@
-function typeNextChar(element, text, index = 0, delay = 30) {
-  if (index < text.length) {
-    element.textContent += text[index];
-    index++;
-    setTimeout(() => typeNextChar(element, text, index, delay), delay);
-  }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
+  // work in progress badge
+  let isAnimationInProgress = false;
   const wipBadge = document.getElementById("wip");
+  wipBadge.addEventListener("click", function() {
+  if (!isAnimationInProgress) {
+    isAnimationInProgress = true;
 
-    wipBadge.addEventListener("click", function() {
-      const originalText = wipBadge.textContent;
-      wipBadge.textContent = "";
-      typeNextChar(wipBadge, "work in progress", 0, 30);
+    const originalText = wipBadge.textContent;
+    wipBadge.textContent = "";
+    
+    const typingElement = wipBadge; // Using the badge element as the typing element
+    const typingText = ["work in progress"];
+    typeNextChar(typingElement, typingText, 0, 0, 30, 0); // No line break
 
-      setTimeout(() => {
-        wipBadge.textContent = originalText;
-      }, 3000);
-  });
+    setTimeout(() => {
+      wipBadge.textContent = originalText;
+      isAnimationInProgress = false;
+    }, 3000);
+  }
+}); 
 });
