@@ -8,9 +8,11 @@
   <link rel="stylesheet" href="stylesheets/base.css">
   <link rel="stylesheet" href="stylesheets/page-base.css">
   <link rel="stylesheet" href="stylesheets/component-socials.css">
+  <link rel="stylesheet" href="../stylesheets/wip.css">
   <link rel="icon" type="image/x-icon" href="images/favicon.png">
 
   <script src="script.js"></script>
+  <script src="filter-articles.js"></script>
   
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-38DM4F0S3L"></script>
@@ -64,64 +66,66 @@
     <header class="section-header">
       <h1>writing portfolio</h1>
       <p>a collection of my memos & papers on various topics of public policy and economics that intrigue me</p>
+      <span class="wip-badge" id="latam-badge" onclick="filterArticles('latam');">latam</span>
+      <span class="wip-badge" id="corp-gov-badge" onclick="filterArticles('corp-gov');">corporate governance</span>
     </header>
     
     <!-- Article Grid -->
     <div class="item-grid">
-      <a href="writing/chilean-food-act.html">
-        <div class="item-box">
+      <div class="item-box latam">
+        <a href="writing/chilean-food-act.html">
           <div class="item-image" style="background-image: url('images/chilean-food-act.jpeg');"></div>
           <div class="item-details">
             <span class="item-year">2023</span>
             <h2 class="item-title">The Chilean Food Act</h2>
             <p class="item-byline">front-of-package (FOP) labeling effects on consumption habits and health outcomes</p>
           </div>
-        </div>
-      </a>
-
-      <a href="writing/political-economy-thesis.html"><div class="item-box">
-        <div class="item-image" style="background-image: url('images/pe-thesis-logo.jpg');"></div>
-        <div class="item-details">
-          <span class="item-year">2023</span>
-          <h2 class="item-title">Political Economy Thesis</h2>
-          <p class="item-byline">a case study on the effect of incorporation structure on financial performance</p>
+        </a>
+      </div>
+      
+      <div class="item-box corp-gov">
+        <a href="writing/political-economy-thesis.html">
+          <div class="item-image" style="background-image: url('images/pe-thesis-logo.jpg');"></div>
+          <div class="item-details">
+            <span class="item-year">2023</span>
+            <h2 class="item-title">Political Economy Thesis</h2>
+            <p class="item-byline">a case study on the effect of incorporation structure on financial performance</p>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
 
-      <a href="writing/ser-pilo-paga.html">
-        <div class="item-box">
-          <div class="item-box">
-            <div class="item-image" style="background-image: url('images/spp-colombia.jpeg');"></div>
-            <div class="item-details">
-              <span class="item-year">2023</span>
-              <h2 class="item-title">Ser Pilo Paga (Colombia)</h2>
-              <p class="item-byline">a path to high-quality higher education for low-income Colombian students</p>
-            </div>
+      <div class="item-box latam">
+        <a href="writing/ser-pilo-paga.html">
+          <div class="item-image" style="background-image: url('images/spp-colombia.jpeg');"></div>
+          <div class="item-details">
+            <span class="item-year">2023</span>
+            <h2 class="item-title">Ser Pilo Paga (Colombia)</h2>
+            <p class="item-byline">a path to high-quality higher education for low-income Colombian students</p>
           </div>
-        </div>
-      </a>
-
-      <a href="writing/evoting-brazil.html">
-        <div class="item-box">
+        </a>
+      </div>
+    
+      <div class="item-box latam">
+        <a href="writing/evoting-brazil.html">
           <div class="item-image" style="background-image: url('images/evoting-brazil.jpeg');"></div>
           <div class="item-details">
             <span class="item-year">2023</span>
             <h2 class="item-title">Electronic Voting in Brazil</h2>
             <p class="item-byline">enfranchisement effects on health outcomes</p>
           </div>
-        </div>
-      </a>
-
-      <a href="writing/hospitals-chile.html"><div class="item-box">
-        <div class="item-image" style="background-image: url('images/chile-hospital.jpeg');"></div>
-        <div class="item-details">
-          <span class="item-year">2023</span>
-          <h2 class="item-title">Public Hospitals in Chile</h2>
-          <p class="item-byline">a shift to meritocracy and its effects on mortality</p>
+        </a>
+      </div>
+      
+      <div class="item-box latam">
+        <a href="writing/hospitals-chile.html">
+          <div class="item-image" style="background-image: url('images/chile-hospital.jpeg');"></div>
+          <div class="item-details">
+            <span class="item-year">2023</span>
+            <h2 class="item-title">Public Hospitals in Chile</h2>
+            <p class="item-byline">a shift to meritocracy and its effects on mortality</p>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
       <!-- Repeat similar structure for other articles -->
       
     </div>

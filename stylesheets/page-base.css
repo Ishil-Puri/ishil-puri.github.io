@@ -17,10 +17,11 @@
   }
   
   .main-content {
-    margin: auto;
-    margin-top: 30px;
+    margin-top: 80px;
     padding: 40px;
     width: 100%;
+    height: calc(100vh - 30px); /* Calculate the remaining height (viewport height minus margin-top) */
+    overflow-y: auto;
   }
   .item-grid {
     display: grid;
@@ -31,7 +32,7 @@
     font-size: 36px;
   }
   p {
-    font-size: 14px;
+    font-size: 16px;
   }
   .bar {
     width: 30px;
@@ -110,6 +111,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    transition: all 0.5s ease;
   }
 
 }
@@ -150,6 +152,7 @@
   background-color: var(--button-background);
   overflow: hidden;
   height: 260px;
+  border-radius: 5px;
 }
 
 .item-image {
@@ -187,4 +190,8 @@
 
 .item-byline {
   font-size: 14px;
+}
+
+.hidden {
+  display: none;
 }

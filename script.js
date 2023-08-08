@@ -41,15 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Function to detect and toggle dark mode based on OS preference
-function toggleDarkModeBasedOnOS() {
-  const osDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const isDarkModeEnabled = localStorage.getItem('darkMode') === 'true';
-  const hasLocalColorPref = localStorage.getItem('userColorPrefDark');
-  
-  if (osDarkMode !== isDarkModeEnabled && !hasLocalColorPref) {
-    toggleDarkMode(fromBtn=false);
+  function toggleDarkModeBasedOnOS() {
+    const osDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDarkModeEnabled = localStorage.getItem('darkMode') === 'true';
+    const hasLocalColorPref = localStorage.getItem('userColorPrefDark');
+    
+    if (osDarkMode !== isDarkModeEnabled && !hasLocalColorPref) {
+      toggleDarkMode(fromBtn=false);
+    }
   }
-}
 
   // Listen for changes in OS preference for dark mode
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', toggleDarkModeBasedOnOS);
