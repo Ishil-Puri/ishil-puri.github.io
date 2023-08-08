@@ -10,9 +10,13 @@
   <link rel="stylesheet" href="../stylesheets/component-socials.css">
   <link rel="stylesheet" href="../stylesheets/photo-gallery.css"> 
   <link rel="stylesheet" href="../stylesheets/wip.css">
+  <link rel="stylesheet" href="../stylesheets/modal.css">
   <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+  
   <script src="../script.js"></script>
-  <script src="../wip-typing-effect.js"></script>
+  <script src="../scripts/wip-typing-effect.js"></script>
+  <script src="../scripts/modal.js"></script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-38DM4F0S3L"></script>
   <script>
@@ -64,25 +68,31 @@
   <div class="main-content">
     <header class="section-header">
       <h1>cityscapes</h1>
-      <!-- <p>...</p> -->
+      <!-- <p>2022</p> -->
       <span class="wip-badge" id="wip">WIP</span>
     </header>
     
     <!-- Photo Gallery -->
     <div class="photo-gallery">
-      <div class="photo-card" data-src="../images/city/city-retiro.jpeg">
-        <div class="photo-image" style="background-image: url('../images/city/city-retiro.jpeg');"></div>
+      <div class="photo-gallery">
+        <div class="photo-card" data-src="../images/city/city-retiro.jpeg" onclick="openModal('../images/city/city-retiro.jpeg')">
+          <div class="photo-image" style="background-image: url('../images/city/city-retiro.jpeg');"></div>
+        </div>
+      
+        <div class="photo-card" data-src="../images/city/city-bridge.jpeg" onclick="openModal('../images/city/city-bridge.jpeg')">
+          <div class="photo-image" style="background-image: url('../images/city/city-bridge.jpeg');"></div>
+        </div>
+      
+        <div class="photo-card" data-src="../images/city/city-bridge2.png" onclick="openModal('../images/city/city-bridge2.png')">
+          <div class="photo-image" style="background-image: url('../images/city/city-bridge2.png');"></div>
+        </div>
       </div>
-
-      <div class="photo-card" data-src="../images/city/city-bridge.jpeg">
-        <div class="photo-image" style="background-image: url('../images/city/city-bridge.jpeg');"></div>
-      </div>
-
-      <div class="photo-card" data-src="../images/city/city-bridge2.jpg">
-        <div class="photo-image" style="background-image: url('../images/city/city-bridge2.png');"></div>
-      </div>
-
       <!-- Repeat similar structure for more photo cards -->
+
+      <div class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" src="" alt="Modal Image">
+      </div>
 
     </div>
 

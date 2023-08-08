@@ -8,6 +8,7 @@
   --badge-color: rgba(0, 0, 0, 0.1);
   --badge-hover-color: rgba(0, 0, 0, 0.2);
   --overlay-color: rgb(245, 245, 245);
+  --overlay-color-a: rgb(245, 245, 245, 0.8);
 }
 
 body {
@@ -39,6 +40,7 @@ body.disable-fill-transition {
   --badge-color: #f0f0f0;
   --badge-hover-color: #d0d0d0;
   --overlay-color: rgba(45, 48, 51);
+  --overlay-color-a: rgba(45, 48, 51, 0.8);
 }
 
 body.dark-mode {
