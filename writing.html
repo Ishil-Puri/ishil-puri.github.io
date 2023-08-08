@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Writing Portfolio - Ishil Puri</title>
+  <title>writing portfolio - ishil puri</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="stylesheets/base.css">
   <link rel="stylesheet" href="stylesheets/page-base.css">
   <link rel="stylesheet" href="stylesheets/component-socials.css">
+
   <script src="script.js"></script>
   
   <!-- Google tag (gtag.js) -->
@@ -25,7 +26,17 @@
   <!-- Add the loading screen -->
   <div class="loading-screen"></div>
 
-  <!-- Navigation Bar -->
+  <!-- Mobile Navigation Overlay Bar -->
+  <div class="nav-overlay">
+    <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <a href="index.html" class="overlay-logo">ishil puri</a>
+  </div>
+
+  <!-- Desktop Navigation Bar -->
   <nav class="vertical-nav">
     <a href="index.html" class="nav-item nav-logo">ishil puri</a>
     <a href="index.html" class="nav-item">home</a>
@@ -42,7 +53,7 @@
         </svg></a>
       <a href="mailto:ishil@berkeley.edu" class="social-button" target="_blank">
         <svg width="24" height="24" viewBox="-600 -500 3000 3000" class="icon">
-           <path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/>
+          <path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/>
         </svg></a>
     </div>
   </nav>
@@ -56,17 +67,18 @@
     
     <!-- Article Grid -->
     <div class="item-grid">
-      <a href="articles/hospitals-chile.html"><div class="item-box">
-        <div class="item-image" style="background-image: url('images/chile-hospital.jpeg');"></div>
-        <div class="item-details">
-          <span class="item-year">2023</span>
-          <h2 class="item-title">Public Hospitals in Chile</h2>
-          <p class="item-byline">a shift to meritocracy and its effects on mortality</p>
+      <a href="writing/chilean-food-act.html">
+        <div class="item-box">
+          <div class="item-image" style="background-image: url('images/chilean-food-act.jpeg');"></div>
+          <div class="item-details">
+            <span class="item-year">2023</span>
+            <h2 class="item-title">The Chilean Food Act</h2>
+            <p class="item-byline">front-of-package (FOP) labeling effects on consumption habits and health outcomes</p>
           </div>
         </div>
       </a>
 
-      <a href="articles/ser-pilo-paga.html">
+      <a href="writing/ser-pilo-paga.html">
         <div class="item-box">
           <div class="item-box">
             <div class="item-image" style="background-image: url('images/spp-colombia.jpeg');"></div>
@@ -79,7 +91,7 @@
         </div>
       </a>
 
-      <a href="articles/evoting-brazil.html">
+      <a href="writing/evoting-brazil.html">
         <div class="item-box">
           <div class="item-image" style="background-image: url('images/evoting-brazil.jpeg');"></div>
           <div class="item-details">
@@ -89,18 +101,16 @@
           </div>
         </div>
       </a>
-      
-      <a href="articles/chilean-food-act.html">
-        <div class="item-box">
-          <div class="item-image" style="background-image: url('images/chilean-food-act.jpeg');"></div>
-          <div class="item-details">
-            <span class="item-year">2023</span>
-            <h2 class="item-title">The Chilean Food Act</h2>
-            <p class="item-byline">front-of-package (FOP) labeling effects on consumption habits and health outcomes</p>
+
+      <a href="writing/hospitals-chile.html"><div class="item-box">
+        <div class="item-image" style="background-image: url('images/chile-hospital.jpeg');"></div>
+        <div class="item-details">
+          <span class="item-year">2023</span>
+          <h2 class="item-title">Public Hospitals in Chile</h2>
+          <p class="item-byline">a shift to meritocracy and its effects on mortality</p>
           </div>
         </div>
       </a>
-      
       <!-- Repeat similar structure for other articles -->
       
     </div>

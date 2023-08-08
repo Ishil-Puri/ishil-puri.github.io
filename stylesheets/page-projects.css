@@ -6,7 +6,7 @@
   padding: 40px;
   margin-top: 50px;
 /*  margin-bottom: 5%;*/
-  background-color: var(--button-background);
+  background-color: var(--overlay-color);
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
