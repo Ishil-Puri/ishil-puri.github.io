@@ -53,6 +53,30 @@ figure {
   letter-spacing: 0.015em;
 }
 
+.send-moment {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 6px 9px;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  color: #65645f;
+  font-size: 10px;
+  line-height: 1;
+  text-decoration: none;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.send-moment:hover,
+.send-moment:focus-visible {
+  border-color: rgba(23, 23, 20, 0.24);
+  color: var(--ink);
+}
+
+.send-moment:focus-visible {
+  outline: 1px solid rgba(23, 23, 20, 0.38);
+  outline-offset: 3px;
+}
+
 .field {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
