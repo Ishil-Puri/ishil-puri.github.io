@@ -342,12 +342,16 @@ body.has-pinned .detail {
     transform: none;
   }
 
-  .moment--portrait {
+  .moment--portrait video,
+  .moment--portrait img {
     width: min(58vw, 310px) !important;
+    margin-inline: auto;
   }
 
-  .moment--square {
+  .moment--square video,
+  .moment--square img {
     width: min(80vw, 460px) !important;
+    margin-inline: auto;
   }
 
   .moment video,
