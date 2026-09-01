@@ -1,19 +1,25 @@
-function openModal(imageSrc) {
+document.addEventListener('DOMContentLoaded', () => {
   const modal = document.querySelector('.modal');
-  const modalImg = document.querySelector('.modal-content');
+  const modalImage = modal?.querySelector('.modal-image');
+  const closeButton = modal?.querySelector('.modal-close');
 
-  modal.style.display = 'block';
-  modalImg.src = imageSrc;
-}
+  if (!modal || !modalImage || !closeButton) return;
 
-function closeModal() {
-  const modal = document.querySelector('.modal');
-  modal.style.display = 'none';
-}
+  let trigger;
 
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' || event.key === 'Esc' || event.keyCode === 27) {
-      closeModal();
-    }
+  document.querySelectorAll('.photo-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      const thumbnail = card.querySelector('img');
+      trigger = card;
+      modalImage.src = card.dataset.src;
+      modalImage.alt = thumbnail?.alt || '';
+      modal.showModal();
+    });
   });
-  
+
+  closeButton.addEventListener('click', () => modal.close());
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) modal.close();
+  });
+  modal.addEventListener('close', () => trigger?.focus());
+});

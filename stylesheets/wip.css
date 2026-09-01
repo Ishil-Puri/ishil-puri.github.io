@@ -1,15 +1,22 @@
 /* CSS */
 .wip-badge {
-  top: 10px;
-  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  appearance: none;
   background-color: var(--badge-color);
-  color: #333;
+  color: var(--text-color);
   padding: 4px 8px;
   border-radius: 4px;
+  font: inherit;
   font-weight: bold;
   font-size: 12px;
   opacity: 0.7;
   transition: opacity 0.3s, background-color 0.3s;
+}
+
+button.wip-badge {
+  cursor: pointer;
 }
 
 .wip-badge:hover {

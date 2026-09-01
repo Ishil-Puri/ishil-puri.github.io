@@ -7,5 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   
   const typingElement = document.getElementById("typing-effect");
-  typeNextChar(typingElement, typingText, 0, 0, 30, 900);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    typingElement.textContent = typingText.join('\n');
+  } else {
+    typeNextChar(typingElement, typingText, 0, 0, 30, 900);
+  }
 });

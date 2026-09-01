@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ser pilo paga | ishil puri</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../stylesheets/base.css">
   <link rel="stylesheet" href="../stylesheets/page-base.css">
   <link rel="stylesheet" href="../stylesheets/component-socials.css">
@@ -24,35 +24,32 @@
 </head>
 
 <body>
-  <!-- Add the loading screen -->
-  <div class="loading-screen"></div>
-
   <!-- Mobile Navigation Overlay Bar -->
   <div class="nav-overlay">
-    <div class="hamburger-menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
+    <button type="button" class="hamburger-menu" aria-label="Toggle navigation" aria-controls="site-navigation" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
     <a href="../index.html" class="overlay-logo">ishil puri</a>
   </div>
 
   <!-- Navigation Bar -->
-  <nav class="vertical-nav">
+  <nav class="vertical-nav" id="site-navigation">
     <a href="../index.html" class="nav-item nav-logo">ishil puri</a>
     <a href="../index.html" class="nav-item">home</a>
-    <a href="../writing.html" class="nav-item active">writing</a>
+    <a href="../writing.html" class="nav-item active" aria-current="page">writing</a>
     <a href="../photography.html" class="nav-item">photography</a>
     <a href="../projects.html" class="nav-item">projects</a>
-    <a href="../resume.pdf" target="_blank" class="nav-item">resume</a>
+    <a href="../resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-item">resume</a>
     <div class="social-media" id="nav-social">
-      <a href="https://www.linkedin.com/in/ishilp/" class="social-button" target="_blank">
+      <a href="https://www.linkedin.com/in/ishilp/" class="social-button" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
         <svg viewBox="0 0 30 24" class="icon">
           <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
             c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
             C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"></path>
         </svg></a>
-      <a href="mailto:ishil@berkeley.edu" class="social-button" target="_blank">
+      <a href="mailto:ishil@berkeley.edu" class="social-button" target="_blank" rel="noopener noreferrer" aria-label="Email Ishil">
         <svg width="24" height="24" viewBox="-600 -500 3000 3000" class="icon">
            <path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/>
         </svg></a>
@@ -60,20 +57,18 @@
   </nav>
   
   <!-- Main Content -->
-  <div class="main-content">
+  <main class="main-content">
     <header class="section-header">
       <h1>Ser Pilo Paga</h1>
       <p>a path to high-quality higher education for low-income Colombian students</p>
     </header>
 
-    <!-- <button class="bionic-reading-toggle" id="bionicReadingToggle">Toggle Bionic Reading</button> -->
-
     <!-- Article Content -->
     <article class="article">
-      <img class="article-image" src="../images/spp-colombia.jpeg"></img>
+      <img class="article-image" src="../images/spp-colombia.jpeg" alt="Ser Pilo Paga program logo">
       <p class="article-caption">Ser Pilo Paga program logo.</p>
       
-      <div class="article-text" id="originalArticle">
+      <div class="article-text">
         <p>Ser Pilo Paga (SPP) was a Colombian government program aimed at increasing access to high-quality higher education for low-income students throughout the country which took place between 2014 and 2018. The program has four key characteristics: first, beneficiaries must meet certain eligibility criteria like scoring in the top decile of the standardized high school exit exam and belonging to the poorest 50 percent of households. Second, the program is visible and has simple eligibility rules and application procedures. Third, SPP covers the full tuition cost of any four- or five-year undergraduate program in any government-certified “high-quality” university in Colombia. Finally due to less developed credit markets, program eligibility strongly correlates with access to financial aid. SPP benefits one-tenth of all first-year enrollees and one-third of all those enrolling in “high-quality” universities immediately after graduation. The effect of the program was significant, increasing equity and promoting diversity at private “high-quality” institutions which previously were accessible only to those who could afford them.</p>
 
         <p>Londono-Velez et al. utilize a regression discontinuity comparing need-eligible students who are just above and below the SABER 11 exam score cutoff. They show a 32 percentage point (pp) increase in immediate enrollment for the cohort that was just above the cutoff. When compared to the household wealth index, those who just made the cutoff had increased enrollment of 27.4 pp. Even when looking at medium-term enrollment within 6 years of high school graduation, there is a significant 10 pp increase in enrollment. Furthermore, those students who were above the cutoff had a 46.5 pp increase in enrollment at high-quality higher education institutions (HEIs). The learning implications of this program show students who utilized the program show a 5 pp increase in the standardized college exit exam score compared to the group just below the cutoff. Wages in the formal sector were seen to increase significantly 7 years after graduation. Also, equity was increased as this program seems to close the wage gap when comparing eligible and ineligible students on the wealth cutoff after the full effects of the program took place.</p>
@@ -82,15 +77,14 @@
 
         <p style="text-align: center;">—<br />Ishil Puri</p>
 
-        <!-- Add more paragraphs as needed -->
       </div>
 
     </article>
-  </div>
+  </main>
 
     <!-- Dark Mode Toggle Button -->
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()">
-      <svg viewBox="0 0 24 24" class="dark-mode-icon">
+    <button type="button" class="dark-mode-toggle" aria-label="Toggle dark mode">
+      <svg viewBox="0 0 24 24" class="dark-mode-icon" aria-hidden="true">
         <path d="M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12ZM12 0C5.37 0 0 5.37 0 12C0 18.63 5.37 24 12 24C18.63 24 24 18.63 24 12C24 5.37 18.63 0 12 0Z" />
         <path d="M12 5C10.35 5 9 6.35 9 8C9 9.65 10.35 11 12 11C13.65 11 15 9.65 15 8C15 6.35 13.65 5 12 5Z" />
       </svg>

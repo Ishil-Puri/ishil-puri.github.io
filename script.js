@@ -1,82 +1,92 @@
-// script.js
+const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+function readSetting(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function writeSetting(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // The theme still works when storage is unavailable.
+  }
+}
+
+const previousTheme = readSetting('darkMode');
+const savedTheme = readSetting('colorTheme')
+  || (previousTheme === null ? null : previousTheme === 'true' ? 'dark' : 'light');
+
+if (!readSetting('colorTheme') && savedTheme) writeSetting('colorTheme', savedTheme);
+
+function setDarkMode(enabled) {
+  document.documentElement.classList.toggle('dark-mode', enabled);
+  document.querySelectorAll('.dark-mode-toggle').forEach((button) => {
+    button.classList.toggle('dark', enabled);
+    button.setAttribute('aria-pressed', String(enabled));
+  });
+}
+
+function toggleDarkMode() {
+  const enabled = !document.documentElement.classList.contains('dark-mode');
+  writeSetting('colorTheme', enabled ? 'dark' : 'light');
+  setDarkMode(enabled);
+}
 
 function typeNextChar(element, textArray, index = 0, charIndex = 0, delay = 30, lineDelay = 900) {
-  if (index < textArray.length) {
-    const currentText = textArray[index];
-    if (charIndex < currentText.length) {
-      element.textContent += currentText[charIndex];
-      charIndex++;
-      setTimeout(() => typeNextChar(element, textArray, index, charIndex, delay, lineDelay), delay);
-    } else {
-      element.innerHTML += "\n";
-      index++;
-      charIndex = 0;
-      setTimeout(() => typeNextChar(element, textArray, index, charIndex, delay, lineDelay), lineDelay);
-    }
+  if (!element || index >= textArray.length) return;
+
+  const currentText = textArray[index];
+  if (charIndex < currentText.length) {
+    element.textContent += currentText[charIndex];
+    window.setTimeout(
+      () => typeNextChar(element, textArray, index, charIndex + 1, delay, lineDelay),
+      delay,
+    );
+    return;
   }
+
+  element.textContent += '\n';
+  window.setTimeout(() => typeNextChar(element, textArray, index + 1, 0, delay, lineDelay), lineDelay);
 }
 
-function toggleDarkMode(fromBtn=true) {
-  const body = document.body;
-  body.classList.toggle('dark-mode');
-  const darkModeToggle = document.querySelector('.dark-mode-toggle');
-  darkModeToggle.classList.toggle('dark');
+setDarkMode(savedTheme ? savedTheme === 'dark' : colorScheme.matches);
 
-  // Store the dark mode preference in localStorage
-  const isDarkModeEnabled = body.classList.contains('dark-mode');
-  localStorage.setItem('darkMode', isDarkModeEnabled);
-  if(fromBtn) {
-    localStorage.setItem('userColorPref', true);
-  } else{
-    localStorage.setItem('userColorPref', false);
-  }
-}
-
-// Apply dark mode preference on page load
 document.addEventListener('DOMContentLoaded', () => {
-  const isDarkModeEnabled = localStorage.getItem('darkMode') === 'true';
-  if (isDarkModeEnabled) {
-    document.body.classList.add('dark-mode');
-    document.querySelector('.dark-mode-toggle').classList.add('dark');
-  }
+  setDarkMode(document.documentElement.classList.contains('dark-mode'));
 
-  // Function to detect and toggle dark mode based on OS preference
-  function toggleDarkModeBasedOnOS() {
-    const osDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDarkModeEnabled = localStorage.getItem('darkMode') === 'true';
-    const hasLocalColorPref = localStorage.getItem('userColorPrefDark');
-    
-    if (osDarkMode !== isDarkModeEnabled && !hasLocalColorPref) {
-      toggleDarkMode(fromBtn=false);
-    }
-  }
-
-  // Listen for changes in OS preference for dark mode
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', toggleDarkModeBasedOnOS);
-
-  // Initial call to check and toggle dark mode based on OS preference
-  toggleDarkModeBasedOnOS()
-
-  document.body.classList.add('disable-fill-transition');
-  setTimeout(() => {
-    document.body.classList.remove('disable-fill-transition');
-  }, 20) // Adjust the delay as needed
-
-  const loadingScreen = document.querySelector('.loading-screen');
-  loadingScreen.classList.add('loaded');
-
-  const hamburgerMenu = document.querySelector('.hamburger-menu');
-  const verticalNav = document.querySelector('.vertical-nav');
-  const mainContent = document.querySelector('.main-content');
-  
-  hamburgerMenu.addEventListener('click', () => {
-    hamburgerMenu.classList.toggle('active');
-    if (verticalNav.style.display === "none" || verticalNav.style.display === "") {
-      verticalNav.style.display = "flex";
-      // mainContent.style.display = "none";
-    } else {
-      verticalNav.style.display = "none";
-      // mainContent.style.display = "block";
-    }
+  document.querySelectorAll('.dark-mode-toggle').forEach((button) => {
+    button.addEventListener('click', toggleDarkMode);
   });
+
+  const menuButton = document.querySelector('.hamburger-menu');
+  const navigation = document.querySelector('.vertical-nav');
+  if (menuButton && navigation) {
+    const setMenuOpen = (open) => {
+      navigation.classList.toggle('is-open', open);
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    };
+
+    menuButton.addEventListener('click', () => {
+      setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+    });
+
+    navigation.addEventListener('click', (event) => {
+      if (event.target.closest('a')) setMenuOpen(false);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || menuButton.getAttribute('aria-expanded') !== 'true') return;
+      setMenuOpen(false);
+      menuButton.focus();
+    });
+  }
+});
+
+colorScheme.addEventListener('change', (event) => {
+  if (!readSetting('colorTheme')) setDarkMode(event.matches);
 });

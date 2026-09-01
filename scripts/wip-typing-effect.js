@@ -1,22 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // work in progress badge
-  let isAnimationInProgress = false;
-  const wipBadge = document.getElementById("wip");
-  wipBadge.addEventListener("click", function() {
-  if (!isAnimationInProgress) {
-    isAnimationInProgress = true;
+  const badge = document.getElementById('wip');
 
-    const originalText = wipBadge.textContent;
-    wipBadge.textContent = "";
-    
-    const typingElement = wipBadge; // Using the badge element as the typing element
-    const typingText = ["work in progress"];
-    typeNextChar(typingElement, typingText, 0, 0, 30, 0); // No line break
+  if (!badge) return;
 
-    setTimeout(() => {
-      wipBadge.textContent = originalText;
-      isAnimationInProgress = false;
-    }, 3000);
-  }
-}); 
+  badge.addEventListener('click', () => {
+    const expanded = badge.getAttribute('aria-expanded') === 'true';
+    badge.textContent = expanded ? 'WIP' : 'work in progress';
+    badge.setAttribute('aria-expanded', String(!expanded));
+  });
 });

@@ -1,7 +1,9 @@
-.cta-button{
-  display: inline-block;
-  background-color: #000;
-  color: #ffffff; /* White text color */
+.cta-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  background-color: var(--text-color);
+  color: var(--background-color);
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
@@ -10,16 +12,17 @@
 }
 
 .social-button {
-  display: inline-block;
-  background-color: var(--button-background); /* Light grey color for the buttons */
-  color: #000; /* Black text color */
-  padding: 5px; /* Increase the padding to create circular buttons */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-background);
+  color: var(--text-color);
+  padding: 7px;
   text-decoration: none;
-  border-radius: 50%; /* Use 50% border-radius to create circles */
-  width: 30px; /* Set a fixed width and height to create small circles */
-  height: 30px;
-  text-align: center;
-  font-size: 0; /* Remove font-size to hide any text inside the buttons */
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 0;
   margin: 0 5px;
 }
 
@@ -29,39 +32,22 @@
 }
 
 
-/* Reset the SVG icon size to fit inside the circular buttons */
 .icon {
   width: 30px;
   height: 30px;
-  fill: var(--icon-color); /* Set the SVG icon color to current theme color (light/dark) */
+  fill: var(--icon-color);
 }
 
 .cta-button:hover {
-  /* background-color: #ababab; Darker grey color on hover */
-  background-color: darken(var(--button-background), 10%);
-  color: lighten(var(--button-text), 10%);
+  opacity: 0.8;
 }
 
 .social-button:hover {
-  background-color: #d4d4d4; /* Darker grey color on hover */
+  background-color: var(--button-hover);
 }
 
 .social-media {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-}
-
-.notification {
-  position: fixed;
-  bottom: 20px;
-  left: calc(50% + 110px);
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 6px;
-  opacity: 0;
-  font-size: 14px;
-  transition: opacity 0.3s;
 }
