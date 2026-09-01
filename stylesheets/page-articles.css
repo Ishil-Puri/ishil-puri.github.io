@@ -1,29 +1,16 @@
-/* Article Styles */
-
-body {
-  height: 100%;
-}
-
 .article {
   margin: 40px auto;
   max-width: 800px;
-  padding: 20px;
+  padding: clamp(20px, 5vw, 40px);
   background-color: var(--background-color);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .article-image {
   width: 100%;
   height: auto;
-  background-size: cover;
-  background-position: center;
   margin-bottom: 10px;
   display: block;
-
 }
 
 .article-caption {
@@ -33,18 +20,20 @@ body {
 }
 
 .article-text {
+  width: 100%;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-color);
 }
 
-.article iframe{
+.article iframe {
   width: 100%;
+  border: 0;
 }
 
 @media (min-width: 769px) {
-  .article iframe{
+  .article iframe {
     width: 85%;
     height: 900px;
   }

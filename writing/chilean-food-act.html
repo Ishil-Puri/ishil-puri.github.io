@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>chilean food act | ishil puri</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../stylesheets/base.css">
   <link rel="stylesheet" href="../stylesheets/page-base.css">
   <link rel="stylesheet" href="../stylesheets/component-socials.css">
@@ -23,35 +23,32 @@
 </head>
 
 <body>
-  <!-- Add the loading screen -->
-  <div class="loading-screen"></div>
-
   <!-- Mobile Navigation Overlay Bar -->
   <div class="nav-overlay">
-    <div class="hamburger-menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
+    <button type="button" class="hamburger-menu" aria-label="Toggle navigation" aria-controls="site-navigation" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
     <a href="../index.html" class="overlay-logo">ishil puri</a>
   </div>
 
   <!-- Navigation Bar -->
-  <nav class="vertical-nav">
+  <nav class="vertical-nav" id="site-navigation">
     <a href="../index.html" class="nav-item nav-logo">ishil puri</a>
     <a href="../index.html" class="nav-item">home</a>
-    <a href="../writing.html" class="nav-item active">writing</a>
+    <a href="../writing.html" class="nav-item active" aria-current="page">writing</a>
     <a href="../photography.html" class="nav-item">photography</a>
     <a href="../projects.html" class="nav-item">projects</a>
-    <a href="../resume.pdf" target="_blank" class="nav-item">resume</a>
+    <a href="../resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-item">resume</a>
     <div class="social-media" id="nav-social">
-      <a href="https://www.linkedin.com/in/ishilp/" class="social-button" target="_blank">
+      <a href="https://www.linkedin.com/in/ishilp/" class="social-button" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
         <svg viewBox="0 0 30 24" class="icon">
           <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
             c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
             C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"></path>
         </svg></a>
-      <a href="mailto:ishil@berkeley.edu" class="social-button" target="_blank">
+      <a href="mailto:ishil@berkeley.edu" class="social-button" target="_blank" rel="noopener noreferrer" aria-label="Email Ishil">
         <svg width="24" height="24" viewBox="-600 -500 3000 3000" class="icon">
            <path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/>
         </svg></a>
@@ -59,20 +56,18 @@
   </nav>
   
   <!-- Main Content -->
-  <div class="main-content">
+  <main class="main-content">
     <header class="section-header">
       <h1>The Chilean Food Act</h1>
       <p>front-of-package (FOP) labeling effects on consumption habits and health outcomes</p>
     </header>
-
-    <!-- <button class="bionic-reading-toggle" id="bionicReadingToggle">Toggle Bionic Reading</button> -->
 
     <!-- Article Content -->
     <article class="article">
       <img class="article-image" src="../images/chilean-food-act.jpeg" alt="Chilean food act">
       <p class="article-caption">A campaign advocating for front-of-package labels in Chile.</p>
       
-      <div class="article-text" id="originalArticle">
+      <div class="article-text">
         <p>The Chilean Food Act of 2016 was the first mandatory nationwide front-of-package (FOP) labeling regulation to be implemented. Obesity rates have tripled worldwide, and approximately 40% of the adult population today is either obese or overweight. Consequently, the Food Act aimed to prevent and reduce growing public health issues such as obesity. The act mandates labels be placed on the front of packages to indicate to consumers when a product is unhealthy. A product is considered unhealthy if targeted nutrients—sugar, calories, sodium, and fat—exceed specific concentration thresholds.</p>
 
         <p>Barahona et. al (2021) provide effects of this policy that are best observed by analyzing the demand and supply sides. On the supply side, firms reformulated their products to fall just below the threshold to avoid placing labels on their products. Suppliers reduced sugar and calorie concentrations by 11.5% and 2.8%, respectively. It is estimated that the cost of this reformulation beneath the thresholds led to a 5.5% increase in prices for reformulated or unlabeled products relative to the original or labeled products. On the demand side, consumers reduced their overall sugar and caloric intake by 9% and 6%, respectively. This change is explained by a combination of product reformulation and consumers substituting within categories where the quantity of labeled products sold relative to unlabeled ones fell by an average of 26.4%. As demonstrated by consumer surveys, this substitution occurs when consumers use FOP labels to correct their prior mistaken beliefs that a certain product was healthy when, in fact, it was not.</p>
@@ -85,15 +80,14 @@
 
         <p style="text-align: center;">—<br />Ishil Puri</p>
 
-        <!-- Add more paragraphs as needed -->
       </div>
 
     </article>
-  </div>
+  </main>
 
     <!-- Dark Mode Toggle Button -->
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()">
-      <svg viewBox="0 0 24 24" class="dark-mode-icon">
+    <button type="button" class="dark-mode-toggle" aria-label="Toggle dark mode">
+      <svg viewBox="0 0 24 24" class="dark-mode-icon" aria-hidden="true">
         <path d="M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12ZM12 0C5.37 0 0 5.37 0 12C0 18.63 5.37 24 12 24C18.63 24 24 18.63 24 12C24 5.37 18.63 0 12 0Z" />
         <path d="M12 5C10.35 5 9 6.35 9 8C9 9.65 10.35 11 12 11C13.65 11 15 9.65 15 8C15 6.35 13.65 5 12 5Z" />
       </svg>
