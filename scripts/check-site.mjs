@@ -35,16 +35,16 @@ for (const file of files) {
   const duplicateIds = [...new Set(ids.filter((id, index) => ids.indexOf(id) !== index))];
   if (duplicateIds.length) report(file, `duplicate ids: ${duplicateIds.join(', ')}`);
 
-  if (!page.startsWith('delight/')) {
-    const delightLinks = anchors.filter((attributes) => /\bclass="[^"]*\bdelight-portal\b[^"]*"/i.test(attributes));
-    if (delightLinks.length !== 1) {
-      report(file, 'expected one Delight portal');
-    } else {
-      const href = delightLinks[0].match(/\bhref="([^"]+)"/i)?.[1];
-      if (!href || new URL(href, pageUrl).pathname !== '/delight/') {
-        report(file, 'Delight portal must link to /delight/');
-      }
-    }
+  if (/\bdelight-portal\b/i.test(html)) report(file, 'legacy Delight portal found');
+
+  if (/\bclass="[^"]*\bvertical-nav\b[^"]*"/i.test(html)) {
+    const delightLinks = anchors.filter((attributes) => {
+      const href = attributes.match(/\bhref="([^"]+)"/i)?.[1];
+      return /\bclass="[^"]*\bnav-item\b[^"]*"/i.test(attributes)
+        && href
+        && new URL(href, pageUrl).pathname === '/delight/';
+    });
+    if (delightLinks.length !== 1) report(file, 'expected one Delight sidebar link');
   }
 
   if (/<\/img\s*>/i.test(html)) report(file, 'img elements must not have closing tags');
