@@ -36,13 +36,13 @@ for (const file of files) {
   if (duplicateIds.length) report(file, `duplicate ids: ${duplicateIds.join(', ')}`);
 
   if (!page.startsWith('delight/')) {
-    const delightLinks = anchors.filter((attributes) => /\bclass="[^"]*\bdelight-cloud\b[^"]*"/i.test(attributes));
+    const delightLinks = anchors.filter((attributes) => /\bclass="[^"]*\bdelight-portal\b[^"]*"/i.test(attributes));
     if (delightLinks.length !== 1) {
-      report(file, 'expected one Delight control');
+      report(file, 'expected one Delight portal');
     } else {
       const href = delightLinks[0].match(/\bhref="([^"]+)"/i)?.[1];
       if (!href || new URL(href, pageUrl).pathname !== '/delight/') {
-        report(file, 'Delight control must link to /delight/');
+        report(file, 'Delight portal must link to /delight/');
       }
     }
   }
