@@ -62,33 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', toggleDarkMode);
   });
 
-  const delightPortal = document.querySelector('.delight-portal');
-  if (delightPortal && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    const desktopSidebar = window.matchMedia('(min-width: 769px)');
-    const hasSidebar = Boolean(document.querySelector('.vertical-nav'));
-
-    window.addEventListener('pointermove', (event) => {
-      const x = event.clientX - (hasSidebar && desktopSidebar.matches ? 240 : window.innerWidth / 2);
-      const y = event.clientY - (hasSidebar && desktopSidebar.matches ? window.innerHeight / 2 : window.innerHeight - 12);
-      const distance = Math.hypot(x, y);
-      delightPortal.classList.toggle('is-near', distance < 170);
-
-      if (distance < 240) {
-        delightPortal.style.setProperty('--portal-drift-x', `${Math.max(-12, Math.min(12, x / 14))}px`);
-        delightPortal.style.setProperty('--portal-drift-y', `${Math.max(-12, Math.min(12, y / 14))}px`);
-      } else {
-        delightPortal.style.removeProperty('--portal-drift-x');
-        delightPortal.style.removeProperty('--portal-drift-y');
-      }
-    }, { passive: true });
-
-    document.documentElement.addEventListener('mouseleave', () => {
-      delightPortal.classList.remove('is-near');
-      delightPortal.style.removeProperty('--portal-drift-x');
-      delightPortal.style.removeProperty('--portal-drift-y');
-    });
-  }
-
   const menuButton = document.querySelector('.hamburger-menu');
   const navigation = document.querySelector('.vertical-nav');
   if (menuButton && navigation) {
