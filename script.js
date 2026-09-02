@@ -62,22 +62,30 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', toggleDarkMode);
   });
 
-  if (window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) {
-    document.querySelectorAll('.delight-cloud').forEach((link) => {
-      link.addEventListener('pointermove', (event) => {
-        const bounds = link.getBoundingClientRect();
-        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-        link.style.setProperty('--cloud-x', `${x * 7}px`);
-        link.style.setProperty('--cloud-y', `${y * 5}px`);
-        link.style.setProperty('--cloud-tilt', `${x * 4}deg`);
-      });
+  const delightPortal = document.querySelector('.delight-portal');
+  if (delightPortal && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const desktopSidebar = window.matchMedia('(min-width: 769px)');
+    const hasSidebar = Boolean(document.querySelector('.vertical-nav'));
 
-      link.addEventListener('pointerleave', () => {
-        link.style.removeProperty('--cloud-x');
-        link.style.removeProperty('--cloud-y');
-        link.style.removeProperty('--cloud-tilt');
-      });
+    window.addEventListener('pointermove', (event) => {
+      const x = event.clientX - (hasSidebar && desktopSidebar.matches ? 240 : window.innerWidth / 2);
+      const y = event.clientY - (hasSidebar && desktopSidebar.matches ? window.innerHeight / 2 : window.innerHeight - 12);
+      const distance = Math.hypot(x, y);
+      delightPortal.classList.toggle('is-near', distance < 170);
+
+      if (distance < 240) {
+        delightPortal.style.setProperty('--portal-drift-x', `${Math.max(-12, Math.min(12, x / 14))}px`);
+        delightPortal.style.setProperty('--portal-drift-y', `${Math.max(-12, Math.min(12, y / 14))}px`);
+      } else {
+        delightPortal.style.removeProperty('--portal-drift-x');
+        delightPortal.style.removeProperty('--portal-drift-y');
+      }
+    }, { passive: true });
+
+    document.documentElement.addEventListener('mouseleave', () => {
+      delightPortal.classList.remove('is-near');
+      delightPortal.style.removeProperty('--portal-drift-x');
+      delightPortal.style.removeProperty('--portal-drift-y');
     });
   }
 
