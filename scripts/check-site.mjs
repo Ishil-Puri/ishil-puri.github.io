@@ -27,9 +27,25 @@ const files = await htmlFiles(root);
 
 for (const file of files) {
   const html = await readFile(file, 'utf8');
+  const page = relative(root, file);
+  const pagePath = page.split('/').map(encodeURIComponent).join('/');
+  const pageUrl = new URL(pagePath, 'https://example.test/');
+  const anchors = [...html.matchAll(/<a\b([^>]*)>/gi)].map((match) => match[1]);
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
   const duplicateIds = [...new Set(ids.filter((id, index) => ids.indexOf(id) !== index))];
   if (duplicateIds.length) report(file, `duplicate ids: ${duplicateIds.join(', ')}`);
+
+  if (!page.startsWith('delight/')) {
+    const delightLinks = anchors.filter((attributes) => /\bclass="[^"]*\bdelight-cloud\b[^"]*"/i.test(attributes));
+    if (delightLinks.length !== 1) {
+      report(file, 'expected one Delight control');
+    } else {
+      const href = delightLinks[0].match(/\bhref="([^"]+)"/i)?.[1];
+      if (!href || new URL(href, pageUrl).pathname !== '/delight/') {
+        report(file, 'Delight control must link to /delight/');
+      }
+    }
+  }
 
   if (/<\/img\s*>/i.test(html)) report(file, 'img elements must not have closing tags');
   if (/<[^>]+\son[a-z]+\s*=/i.test(html)) report(file, 'inline event handler found');
@@ -44,20 +60,19 @@ for (const file of files) {
     if (!label && !text) report(file, 'button is missing an accessible name');
   }
 
-  for (const match of html.matchAll(/<a\b([^>]*)>/gi)) {
-    if (/\btarget="_blank"/i.test(match[1]) && !/\brel="[^"]*noopener[^"]*"/i.test(match[1])) {
+  for (const attributes of anchors) {
+    if (/\btarget="_blank"/i.test(attributes) && !/\brel="[^"]*noopener[^"]*"/i.test(attributes)) {
       report(file, 'target="_blank" link is missing rel="noopener"');
     }
   }
 
-  const pagePath = relative(root, file).split('/').map(encodeURIComponent).join('/');
-  const pageUrl = new URL(pagePath, 'https://example.test/');
   for (const match of html.matchAll(/\b(?:href|src|poster|data-src)="([^"]+)"/gi)) {
     const reference = match[1].replaceAll('&amp;', '&');
     if (/^(?:#|data:|mailto:|tel:|https?:|\/\/)/i.test(reference)) continue;
 
     const targetUrl = new URL(reference, pageUrl);
-    const targetPath = join(root, decodeURIComponent(targetUrl.pathname).replace(/^\/+/, ''));
+    const targetName = decodeURIComponent(targetUrl.pathname).replace(/^\/+/, '');
+    const targetPath = join(root, !targetName || targetName.endsWith('/') ? `${targetName}index.html` : targetName);
     try {
       await access(targetPath);
     } catch {

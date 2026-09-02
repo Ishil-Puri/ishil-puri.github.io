@@ -62,6 +62,25 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', toggleDarkMode);
   });
 
+  if (window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) {
+    document.querySelectorAll('.delight-cloud').forEach((link) => {
+      link.addEventListener('pointermove', (event) => {
+        const bounds = link.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+        link.style.setProperty('--cloud-x', `${x * 7}px`);
+        link.style.setProperty('--cloud-y', `${y * 5}px`);
+        link.style.setProperty('--cloud-tilt', `${x * 4}deg`);
+      });
+
+      link.addEventListener('pointerleave', () => {
+        link.style.removeProperty('--cloud-x');
+        link.style.removeProperty('--cloud-y');
+        link.style.removeProperty('--cloud-tilt');
+      });
+    });
+  }
+
   const menuButton = document.querySelector('.hamburger-menu');
   const navigation = document.querySelector('.vertical-nav');
   if (menuButton && navigation) {
