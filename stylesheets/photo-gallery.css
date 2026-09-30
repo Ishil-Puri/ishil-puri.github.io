@@ -4,13 +4,32 @@
   gap: 20px;
 }
 
+.photo-placeholder {
+  background-size: cover;
+  background-position: center;
+}
+
+.photo-placeholder > img {
+  transition: opacity 0.25s, transform 0.2s;
+}
+
+.photo-placeholder > .is-loading {
+  opacity: 0;
+}
+
+.photo-placeholder > .item-image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
 .photo-card {
   display: block;
   width: 100%;
   padding: 0;
   overflow: hidden;
   appearance: none;
-  background: var(--button-background);
+  background-color: var(--button-background);
   border: 0;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -21,9 +40,9 @@
 .photo-image {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 3 / 2;
   object-fit: cover;
-  transition: transform 0.2s;
 }
 
 @media (hover: hover) {
@@ -45,7 +64,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .photo-card,
-  .photo-image {
+  .photo-placeholder > img {
     transition: none;
   }
 }
